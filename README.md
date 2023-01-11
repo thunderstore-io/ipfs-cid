@@ -1,5 +1,9 @@
 # ipfs-cid
 
+[![pypi](https://img.shields.io/pypi/v/ipfs-cid)](https://pypi.org/project/ipfs-cid/)
+[![test](https://github.com/thunderstore-io/ipfs-cid/workflows/Test/badge.svg)](https://github.com/thunderstore-io/ipfs-cid/actions)
+[![codecov](https://codecov.io/gh/thunderstore-io/ipfs-cid/branch/master/graph/badge.svg?token=6lS3pEHvIw)](https://codecov.io/gh/thunderstore-io/ipfs-cid)
+
 A library for building IPFS CID v1 compatible content identifiers using fixed
 encoding parameters.
 
