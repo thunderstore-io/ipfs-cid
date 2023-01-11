@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ipfs-cid"
-version = "0.1.0"
+version = "0.1.1"
 description = "Library for generating IPFS v1 CIDs"
 authors = ["Mythic <mythic@thunderstore.io>"]
 license = "MIT"
