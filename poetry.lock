@@ -95,6 +95,17 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "pytest-codeblocks"
+version = "0.16.1"
+description = "Test code blocks in your READMEs"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pytest = ">=7.0.0"
+
+[[package]]
 name = "pytest-cov"
 version = "4.0.0"
 description = "Pytest plugin for measuring coverage."
@@ -119,8 +130,8 @@ python-versions = ">=3.7"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.10"
-content-hash = "b375e1ac9811fa16809357266cd52b6907f09063f807f75f70fd09eabe60290f"
+python-versions = "^3.8"
+content-hash = "169ed55f303932a8324a6e4c60e9a16a2a5c0af616c8528a8bf979e1af45ae7c"
 
 [metadata.files]
 attrs = [
@@ -203,6 +214,10 @@ pluggy = [
 pytest = [
     {file = "pytest-7.2.0-py3-none-any.whl", hash = "sha256:892f933d339f068883b6fd5a459f03d85bfcb355e4981e146d2c7616c21fef71"},
     {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
+]
+pytest-codeblocks = [
+    {file = "pytest_codeblocks-0.16.1-py3-none-any.whl", hash = "sha256:a99f5336774241e7879a68cc86602b651154d726d3ae26efa288a805a7ad7795"},
+    {file = "pytest_codeblocks-0.16.1.tar.gz", hash = "sha256:14cc14a78e578f30f505602eb7a6fb8a22d9c4664dfa9aca6429b93da6eaea2a"},
 ]
 pytest-cov = [
     {file = "pytest-cov-4.0.0.tar.gz", hash = "sha256:996b79efde6433cdbd0088872dbc5fb3ed7fe1578b68cdbba634f14bb8dd0470"},
