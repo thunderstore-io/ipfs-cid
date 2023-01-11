@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "ipfs-cid"
 version = "0.1.1"
-description = "Library for generating IPFS v1 CIDs"
+description = "A library for building IPFS CID v1 compatible content identifiers using fixed encoding parameters."
 authors = ["Mythic <mythic@thunderstore.io>"]
+repository = "https://github.com/thunderstore-io/ipfs-cid"
+homepage = "https://github.com/thunderstore-io/ipfs-cid"
+keywords = ["ipfs", "multihash", "multibase", "cid", "hash"]
 license = "MIT"
 readme = "README.md"
 packages = [
