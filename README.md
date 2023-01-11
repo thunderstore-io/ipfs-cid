@@ -10,12 +10,44 @@ encoding parameters.
 
 ## Usage
 
+### Get CID from bytes
+
+All at once
+
 ```python
-from ipfs_cid import encode_cid_v1
+from ipfs_cid import cid_sha256_hash
 
 data = b"Hello world"
-result = encode_cid_v1(data)
-# result is now "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
+result = cid_sha256_hash(data)
+assert result == "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
+```
+
+In chunks with a generator
+
+```python
+from typing import Iterable
+from io import BytesIO
+from ipfs_cid import cid_sha256_hash_chunked
+
+def as_chunks(stream: BytesIO, chunk_size: int) -> Iterable[bytes]:
+    while len((chunk := stream.read(chunk_size))) > 0:
+        yield chunk
+
+buffer = BytesIO(b"Hello world")
+result = cid_sha256_hash_chunked(as_chunks(buffer, 4))
+assert result == "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
+```
+
+### Wrap an existing SHA 256 checksum as a CID
+
+```python
+from hashlib import sha256
+from ipfs_cid import cid_sha256_wrap_digest
+
+data = b"Hello world"
+digest = sha256(data).digest()
+result = cid_sha256_wrap_digest(digest)
+assert result == "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
 ```
 
 ## Encoding Format

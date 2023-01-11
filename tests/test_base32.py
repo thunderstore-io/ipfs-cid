@@ -1,6 +1,6 @@
 import pytest
 
-from ipfs_cid.encode import Base32Multibase
+from ipfs_cid.base32 import Base32Multibase
 
 
 # Sourced from https://github.com/multiformats/multibase/tree/master/tests
