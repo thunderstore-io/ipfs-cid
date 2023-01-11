@@ -40,6 +40,9 @@ assert result == "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
 
 ### Wrap an existing SHA 256 checksum as a CID
 
+**WARNING:** This will lead to an invalid CID if an invalid digest is provided.
+This is not possible to validate against without the original data.
+
 ```python
 from hashlib import sha256
 from ipfs_cid import cid_sha256_wrap_digest
@@ -48,6 +51,23 @@ data = b"Hello world"
 digest = sha256(data).digest()
 result = cid_sha256_wrap_digest(digest)
 assert result == "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
+```
+
+### Unwrap a compatible CID to a sha256 digest
+
+**NOTE:** The `cid_sha256_unwrap_digest` function will throw an `AttributeError`
+if the input CID is not using the same encoding parameters.
+
+```python
+from hashlib import sha256
+from ipfs_cid import cid_sha256_unwrap_digest
+
+data = b"Hello world"
+digest = sha256(data).digest()
+
+cid = "bafkreide5semuafsnds3ugrvm6fbwuyw2ijpj43gwjdxemstjkfozi37hq"
+result = cid_sha256_unwrap_digest(cid)
+assert result == digest
 ```
 
 ## Encoding Format
